@@ -77,13 +77,31 @@
 
 \noindent Copyright \copyright\ 2021 Ira Woodring\\ % Copyright notice
 
-\noindent \textsc{Published by Publisher}\\ % Publisher
+%\noindent \textsc{Published by no one yet}\\ % Publisher
 
 \noindent \textsc{irawoodring.net}\\ % URL
 
 \noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information, replace this with your own license (if any)
 
 \noindent \textit{First release, March 2021} % Printing/edition date
+
+%-----------
+% DEDICATION
+%-----------
+\pagestyle{empty} % Disable headers and footers for the following pages
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right side of the book
+
+For Mema, who worked at a Tastee Freeze drive-through to buy my first computer.
+
+For Papa, who taught me, "It is easier to stay ahead than to get ahead."
+
+For the Dravlands, who taught me I had value and deserve love.
+
+For my wife, who helped me figure out who I am, and showed me that the person I am is Ok.
+
+Thank you all.
+
+-\textit{ira}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -104,13 +122,9 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Introduction}}
 
-\begin{quote}
 %It is easier to stay ahead than to get ahead.\\
 %--Roy Ford (my grandfather)
-\textit{Wisdom.... comes not from age, but from education and learning.}
-
---Anton Checkov
-\end{quote}
+\epigraph{Wisdom.... comes not from age, but from education and learning.}{Anton Checkov}
 
 Learning a new field of study is hard.  Throughout my career as an educator and a student I have identified several factors that hinder learning.  I summarize these factors as such:
 
@@ -151,33 +165,76 @@ I am fortunate enough (and have studied the field long enough) to have "filled-i
 
 \chapter{Pouring the Foundation}
 
-\begin{quote}
-
-\end{quote}
-
 \section{What is a computer anyway?}
 
 I have read many definitions of computers over the years.  Most definitions of a computer describe what a computer  does (usually something about input, processing and output).  All definitions I have read are vague or abstract, and building a strong understanding of a vague concept is like placing the foundation of a building on swampland.  Here we define a computer \index{computer} more simply:  \textbf{A computer is a machine}.
 
-The connotation of machine is one that has mechanical parts, and indeed, early computers did have mechanical parts.  Over time though, most of the mechanical pieces have been replaced by electrical ones.  This in no way makes a computer less of a machine.
+Now, obviously we will eventually need a better definition than this.  For now though, let us begin to build a foundation with this simple idea, that most people already understand.  The idea most people have of a machine is an object that does work for humans and has mechanical parts, and indeed, early computers did have mechanical parts (and computers do work for humans.  Over time though, most of the mechanical pieces have been replaced by electrical ones.  This in no way makes a computer less of a machine.  In the next section we will visit the underpinnings of the computing field, and will see that the foundational idea of a general purpose computer is built upon a thought exercise of a very simple machine.
 
-The futurist and famous science-fiction writer Sir Arthur C. Clarke wrote that, "Any sufficiently advanced technology is indistinguishable from magic."  One might expect technology to become less "magical" after it has been around for several decades, but with computers the opposite seems to have happened.  Computing technology continues to grow by adding layers to existing technology.  Programming languages for instance, start with an instruction set at the processor level - but no one wants to (or should) program at such a low-level.  So we develop higher-level languages that compile down to lower-level instructions. At this point we often find ourselves writing software in a language that runs on a virtual (software-based) machine which itself has been written in a high-level language that is compiled to low-level code to run on specific pieces of hardware (consider the Java VM for instance).  The layers are so many and so thick at this point that the what happens at the lowest layers seems like magic again. 
+\section{The Turing Machine}
 
-It is no wonder that so many students in Computer Science and related fields drop out.  Students can't begin to build a foundation an ethereal concept.
+The futurist and famous science-fiction writer Sir Arthur C. Clarke wrote that, "Any sufficiently advanced technology is indistinguishable from magic."  One might expect technology to become less "magical" after it has been around for several decades, but with computers the opposite seems to have happened.  Computing technology continues to grow by adding layers to existing technology.  Programming languages for instance, start with an instruction set at the processor level - but no one wants to (or should) program at such a low-level.  So we develop higher-level languages that compile down to lower-level instructions. At this point we often find ourselves writing software in a language that runs on a virtual (software-based) machine /newglossaryentry{virtual machine}{ name=virtual machine, description={A program that runs on a computer and emulates a computer} which itself has been written in a high-level language that is compiled to low-level code to run on specific pieces of hardware (consider the Java VM for instance).  The layers are so many and so thick at this point that the what happens at the lowest layers seems like magic again. 
 
-An amazing mathematician named Alan Turing is largely responsible for what we consider a computer today.  Before Turing's work there had been computing devices created for specific purposes, but Turing wanted to create a general purpose computing device.  To do so, he needed to figure out some basic operations that machines could perform, and to figure out how to use those basic operations to solve mathematical problems.  What he ultimately described was a machine with an incredibly long tape or paper that could be written to and read from.  The tape would be divided into equally spaced sections, and in each section a '0' or a '1' could be written.  A small head could read or write to the tape at whichever position was immediately below the head.  On either side of the head were reels and the tape could be wound one way or the other.  Each space on the tape could be numbered, and the head always knows where it is on the tape.
+It is no wonder that so many students in Computer Science and related fields drop out.  Students can't begin to build a foundation on an ethereal concept.
 
-The machine would have a built-in set of operations.  For instance, it might have an operation that tells the head to read the data in location 5 and to move to location 3 if that data were a '0' or move to location 12 if that data were a '1'.  Turing was able to show that a machine with the correct set of basic operations would be able to solve a very large number of mathematical problems.  Today's machines operate on the same principles.  Instead of a long tape we use electrical memory called Random Access Memory (RAM).  The read/write head is replaced by the computer's Central Processing Unit (CPU).  Every processor has set of built in operations it knows how to perform called the Instruction Set.  Just like cars, refrigerators, and all other machines computers may vary in the features they provide.  While each processor will have the same basic problem solving capabilities, certain processors may be faster than others or have an extended set of instructions, just as some cars may have features others don't even though they all provide transportation from one location to another. 
+An amazing mathematician named Alan Turing is largely responsible for what we consider a computer today.  Before Turing's work there had been computing devices created for specific purposes, but Turing wanted to create a general purpose computing device.  To do so, he needed to figure out some basic operations that machines could perform, and to figure out how to use those basic operations to solve mathematical problems.  What he ultimately described was a machine with an incredibly long (in his writing it was infinitely long) tape or paper that could be written to and read from.  The tape would be divided into equally spaced sections, and in each section a '0' or a '1' could be written.  A small head could read or write to the tape at whichever position was immediately below the head.  On either side of the head were reels and the tape could be wound one way or the other.  Each space on the tape could be numbered, and the head always knows where it is on the tape.  Today, we refer to this as a \index{Turing Machine}.
+
+The machine would have a built-in set of operations.  For instance, it might have an operation that tells the head to read the data in location 5 and to move to location 3 if that data were a '0' or move to location 12 if that data were a '1'.  Turing was able to show that a machine with the correct set of basic operations would be able to solve a very large number of mathematical problems.  Today's machines operate on the same principles.  Instead of a long tape we use electrical memory called Random Access Memory (RAM).  The read/write head is replaced by the computer's Central Processing Unit (CPU).  Every processor has a set of built in operations it knows how to perform called the \textbf{instruction set}. \newglossaryentry{instruction set}{name=instruction set, description={The built-in commands that a computer processor can perform}}  Just like cars, refrigerators, and all other machines computers may vary in the features they provide.  While each processor will have the same basic problem solving capabilities, certain processors may be faster than others or have an extended set of instructions, just as some cars may have features others don't even though they all provide transportation from one location to another. 
 
 \section{An example}
 
+\chapter{Problem Solving Operations}
+
+\epigraph{It is a mistake to think you can solve any major problems just with potatoes.}{Douglas Adams}
+
+In Chapter 2 we learned that every computer processor has an \index{instruction set}.  The instructions a processor can be perform are very simple; for instance an instruction called \begin{verbatim}ADDI\end{verbatim} might add a value from on processor register to the value in another processor \index{register}. \newglossaryentry{register}{name=register,description={A small and usually very fast memory location on a computer processor.}} Programming with such simple primitive operations would be incredibly time-consuming, so higher-level languages create \index{abstractions} \newglossaryentry{abstraction}{name=abstraction,description={creating a new concept (in computing this is usually a new data-type or process-type) by combining lower-level concepts and then providing the combination with a new name}}.  The most typical abstractions are 
+
+\begin{itemize}
+\item branching
+\item looping
+\end{itemize}
+
 \chapter{Communicating with Computers}
-\begin{quote}
-\textit{The single biggest problem in communication is the illusion that it has taken place.}
 
--- George Bernard Shaw
-\end{quote}
+\epigraph{The single biggest problem in communication is the illusion that it has taken place.}{George Bernard Shaw}
 
+\chapter{Number Systems Used in Computing}
+
+\epigraph{Without mathematics, there's nothing you can do. Everything around you is mathematics. Everything around you is numbers.}{Shakuntala Devi}
+
+Many new students don't realize that the number system most commonly used for counting (the decimal, or base-10 system) is not the only one.  In fact, in computing there are several systems that are used.  The \textbf{base} of a number system is the collection of symbols used in that number system.  In decimal, we use the digits 0-9, and combine them to create numbers like 2, 42, and 1701.  The following sections describe the more commonly used systems (in computing).
+
+\section{Binary}
+
+At their core computers are large numbers of electrical switches working together to create circuits.  Switches either allow or block electricity from flowing through a particular part of a circuit.  The state where electricity flows is the "Closed" state and when no electricity is flowing the switch is "Open".  We represent Open with a 0 and closed with a 1 (this is a simplification).  Because of this, the base-2 system (Binary) is often useful for professionals in the field.
+
+An example of a base-2 number is
+
+\begin{verbatim}
+00001001
+\end{verbatim}
+
+This number in base-10 is 9.  We convert from base-2 to base-10 by starting at the right-most digit and labeling it position 0.  Moving left, we increment and label each digit's position until we get to the left-most digit.  For each '1' in the number, we add $ 2^{position} $.  We ignore the zeros.  Here we would have
+
+$ 2^{3} + 2^{0} = 8 + 1 = 9 $
+
+\newglossaryentry{decimal}
+{
+	name=decimal,
+	description={The method of representing numbers using a base of 10.  For the majority of the world this is the usual counting system.}
+}
+
+\newglossaryentry{hexadecimal}
+{
+	name=hexadecimal (or hex),
+	description={A method of representing numbers using a base of 16 instead of a base of 10.  Uses digits 0-9 and letters A-F (lower or uppercase).  Often prepended with "0x" to remove any confusion.  For instance, 0x0A (which represents the decimal number '10')}
+}
+
+\newglossaryentry{octal}
+{
+	name=octal,
+	description={A base-8 number system.  Makes use of the digits 0-7.  Sometimes written with a lowercase "o" prepended to avoid confusion with decimal, i.e. o42 (which equals 34 in base-10)}
+}
 %-----
 % END MATTER
 %-----
@@ -349,6 +406,8 @@ In a file, each of these entries could be represented by a single byte.  Viewed 
 \hline
 \end{tabular}
 \end{table}
+
+
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
@@ -375,11 +434,9 @@ In a file, each of these entries could be represented by a single byte.  Viewed 
 \phantomsection
 \setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Glossary}} % Add an Index heading to the table of contents
-\newglossaryentry{virtual machine}
-{
-    name=virtual machine,
-    description={A program that emulates a computer}
-}
+
+
+
 
 \glsaddall
 \printglossaries
