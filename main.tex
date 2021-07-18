@@ -50,6 +50,7 @@
 
 %----------------------------------------------------------------------------------------
 
+\loadglsentries{glossary}
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -167,7 +168,7 @@ I am fortunate enough (and have studied the field long enough) to have "filled-i
 
 \section{What is a computer anyway?}
 
-I have read many definitions of computers over the years.  Most definitions of a computer describe what a computer  does (usually something about input, processing and output).  All definitions I have read are vague or abstract, and building a strong understanding of a vague concept is like placing the foundation of a building on swampland.  Here we define a computer \index{computer} more simply:  \textbf{A computer is a machine}.
+I have read many definitions of computers over the years.  Most definitions of a computer describe what a computer  does (usually something about input, processing and output).  All definitions I have read are vague or abstract, and building a strong understanding of a vague concept is like placing the foundation of a building on swampland.  Here we define a computer \gls{computer} more simply:  \textbf{A computer is a machine}.
 
 Now, obviously we will eventually need a better definition than this.  For now though, let us begin to build a foundation with this simple idea, that most people already understand.  The idea most people have of a machine is an object that does work for humans and has mechanical parts, and indeed, early computers did have mechanical parts (and computers do work for humans.  Over time though, most of the mechanical pieces have been replaced by electrical ones.  This in no way makes a computer less of a machine.  In the next section we will visit the underpinnings of the computing field, and will see that the foundational idea of a general purpose computer is built upon a thought exercise of a very simple machine.
 
@@ -235,6 +236,7 @@ $ 2^{3} + 2^{0} = 8 + 1 = 9 $
 	name=octal,
 	description={A base-8 number system.  Makes use of the digits 0-7.  Sometimes written with a lowercase "o" prepended to avoid confusion with decimal, i.e. o42 (which equals 34 in base-10)}
 }
+
 %-----
 % END MATTER
 %-----
@@ -435,10 +437,7 @@ In a file, each of these entries could be represented by a single byte.  Viewed 
 \setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Glossary}} % Add an Index heading to the table of contents
 
-
-
-
-\glsaddall
+%\glsaddall
 \printglossaries
 
 %----------------------------------------------------------------------------------------
