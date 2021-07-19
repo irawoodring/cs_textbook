@@ -21,7 +21,17 @@
 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
-\usepackage{glossaries}
+\usepackage[index,stylemods={bookindex}]{glossaries-extra}
+\GlsXtrLoadResources[
+ %src={terms},% data in terms.bib
+ label-prefix={idx.},% prefix for primary entry labels
+ dual-prefix={},% prefix for dual entry labels
+ type=index,% put primary entries in 'index' glossary
+ combine-dual-locations={primary}% merge locations and assign to primary list
+]
+
+%\glsxtrnewglslike{idx.}{\idx}{\idxpl}{\Idx}{\Idxpl}
+\glssetcategoryattribute{common}{dualindex}{true}
 
 \usepackage{lipsum} % Inserts dummy text
 \usepackage{epigraph}
@@ -77,7 +87,8 @@
 \defbibheading{bibempty}{}
 
 \usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
-\usepackage{makeidx} % Required to make an index
+%\usepackage{makeidx} % Required to make an index
+
 \makeindex % Tells LaTeX to create the files required for indexing
 
 %----------------------------------------------------------------------------------------

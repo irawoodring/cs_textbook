@@ -51,6 +51,8 @@
 %----------------------------------------------------------------------------------------
 
 \loadglsentries{glossary}
+\glsxtrnewglslike{idx.}{\idx}{\idxpl}{\Idx}{\Idxpl}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -156,7 +158,7 @@ I am fortunate enough (and have studied the field long enough) to have "filled-i
 %	PART
 %----------------------------------------------------------------------------------------
 
-\part{Part One}
+\part{Pouring the Foundation}
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 1
@@ -164,23 +166,23 @@ I am fortunate enough (and have studied the field long enough) to have "filled-i
 
 \chapterimage{chapter_head_2.pdf} % Chapter heading image
 
-\chapter{Pouring the Foundation}
+\chapter{How We Got Here}
 
 \section{What is a computer anyway?}
 
 I have read many definitions of computers over the years.  Most definitions of a computer describe what a computer  does (usually something about input, processing and output).  All definitions I have read are vague or abstract, and building a strong understanding of a vague concept is like placing the foundation of a building on swampland.  Here we define a computer \gls{computer} more simply:  \textbf{A computer is a machine}.
 
-Now, obviously we will eventually need a better definition than this.  For now though, let us begin to build a foundation with this simple idea, that most people already understand.  The idea most people have of a machine is an object that does work for humans and has mechanical parts, and indeed, early computers did have mechanical parts (and computers do work for humans.  Over time though, most of the mechanical pieces have been replaced by electrical ones.  This in no way makes a computer less of a machine.  In the next section we will visit the underpinnings of the computing field, and will see that the foundational idea of a general purpose computer is built upon a thought exercise of a very simple machine.
+Now, obviously we will eventually need a better definition than this.  For now though, let us begin to build a foundation with this simple idea that most people already understand.  The idea most people have of a machine is an object that does work for humans and has mechanical parts, and indeed, early computers did have mechanical parts (and computers do work for humans).  Over time though, most of the mechanical pieces have been replaced by electrical ones.  This in no way makes a computer less of a machine.  In the next section we will visit the underpinnings of the computing field, and will see that the foundational idea of a general purpose computer is built upon a thought exercise of a very simple machine.
 
 \section{The Turing Machine}
 
-The futurist and famous science-fiction writer Sir Arthur C. Clarke wrote that, "Any sufficiently advanced technology is indistinguishable from magic."  One might expect technology to become less "magical" after it has been around for several decades, but with computers the opposite seems to have happened.  Computing technology continues to grow by adding layers to existing technology.  Programming languages for instance, start with an instruction set at the processor level - but no one wants to (or should) program at such a low-level.  So we develop higher-level languages that compile down to lower-level instructions. At this point we often find ourselves writing software in a language that runs on a virtual (software-based) machine /newglossaryentry{virtual machine}{ name=virtual machine, description={A program that runs on a computer and emulates a computer} which itself has been written in a high-level language that is compiled to low-level code to run on specific pieces of hardware (consider the Java VM for instance).  The layers are so many and so thick at this point that the what happens at the lowest layers seems like magic again. 
+The futurist and famous science-fiction writer Sir Arthur C. Clarke wrote that, "Any sufficiently advanced technology is indistinguishable from magic."  One might expect technology to become less "magical" after it has been around for several decades, but with computers the opposite seems to have happened.  Computing technology continues to grow by adding layers to existing technology.  Programming languages for instance, start with an instruction set at the processor level - but no one wants to (or should) program at such a low-level.  So we develop higher-level languages that compile down to lower-level instructions. We have continued to add layers to this onion, and at this point we often find ourselves writing software in a language that runs on a virtual (software-based) machine which itself has been written in a high-level language that is compiled to low-level code to run on specific pieces of hardware (consider the Java VM for instance).  The layers are so many and so thick at this point that the what happens at the lowest layers seems like magic again. 
 
-It is no wonder that so many students in Computer Science and related fields drop out.  Students can't begin to build a foundation on an ethereal concept.
+It is no wonder that so many students in Computer Science and related fields drop out.  Students can't begin to build a foundation on an ethereal concept.  Let's solidify this idea of a computer as a machine with some history.
 
-An amazing mathematician named Alan Turing is largely responsible for what we consider a computer today.  Before Turing's work there had been computing devices created for specific purposes, but Turing wanted to create a general purpose computing device.  To do so, he needed to figure out some basic operations that machines could perform, and to figure out how to use those basic operations to solve mathematical problems.  What he ultimately described was a machine with an incredibly long (in his writing it was infinitely long) tape or paper that could be written to and read from.  The tape would be divided into equally spaced sections, and in each section a '0' or a '1' could be written.  A small head could read or write to the tape at whichever position was immediately below the head.  On either side of the head were reels and the tape could be wound one way or the other.  Each space on the tape could be numbered, and the head always knows where it is on the tape.  Today, we refer to this as a \index{Turing Machine}.
+An amazing mathematician named Alan Turing is largely responsible for what we consider a computer today.  Before Turing's work there had been computing devices created for specific purposes, but Turing wanted to create a general purpose computing device.  To do so, he needed to figure out some basic operations that machines could perform, and to figure out how to use those basic operations to solve mathematical problems.  What he ultimately described was a machine with an incredibly long (in his writing it was infinitely long) tape or paper that could be written to and read from.  The tape would be divided into equally spaced sections, and in each section a '0' or a '1' could be written.  A small head could read or write to the tape at whichever position was immediately below the head.  On either side of the head were reels and the tape could be wound one way or the other.  Each space on the tape could be numbered, and the head always knows where it is on the tape.  Today, we refer to this as a \gls{Turing Machine}.
 
-The machine would have a built-in set of operations.  For instance, it might have an operation that tells the head to read the data in location 5 and to move to location 3 if that data were a '0' or move to location 12 if that data were a '1'.  Turing was able to show that a machine with the correct set of basic operations would be able to solve a very large number of mathematical problems.  Today's machines operate on the same principles.  Instead of a long tape we use electrical memory called Random Access Memory (RAM).  The read/write head is replaced by the computer's Central Processing Unit (CPU).  Every processor has a set of built in operations it knows how to perform called the \textbf{instruction set}. \newglossaryentry{instruction set}{name=instruction set, description={The built-in commands that a computer processor can perform}}  Just like cars, refrigerators, and all other machines computers may vary in the features they provide.  While each processor will have the same basic problem solving capabilities, certain processors may be faster than others or have an extended set of instructions, just as some cars may have features others don't even though they all provide transportation from one location to another. 
+The machine would have a built-in set of operations.  For instance, it might have an operation that tells the head to read the data in location 5 and to move to location 3 if that data were a '0' or move to location 12 if that data were a '1'.  Turing was able to show that a machine with the correct set of basic operations would be able to solve a very large number of mathematical problems.  Today's machines operate on the same principles.  Instead of a long tape we use electrical memory called Random Access Memory (RAM).  The read/write head is replaced by the computer's Central Processing Unit (CPU).  Every processor has a set of built in operations it knows how to perform called the \gls{instruction set}.  Just like cars, refrigerators, and all other machines computers may vary in the features they provide.  While each processor will have the same basic problem solving capabilities, certain processors may be faster than others or have an extended set of instructions, just as some cars may have features others don't even though they all provide transportation from one location to another. 
 
 \section{An example}
 
@@ -188,12 +190,52 @@ The machine would have a built-in set of operations.  For instance, it might hav
 
 \epigraph{It is a mistake to think you can solve any major problems just with potatoes.}{Douglas Adams}
 
-In Chapter 2 we learned that every computer processor has an \index{instruction set}.  The instructions a processor can be perform are very simple; for instance an instruction called \begin{verbatim}ADDI\end{verbatim} might add a value from on processor register to the value in another processor \index{register}. \newglossaryentry{register}{name=register,description={A small and usually very fast memory location on a computer processor.}} Programming with such simple primitive operations would be incredibly time-consuming, so higher-level languages create \index{abstractions} \newglossaryentry{abstraction}{name=abstraction,description={creating a new concept (in computing this is usually a new data-type or process-type) by combining lower-level concepts and then providing the combination with a new name}}.  The most typical abstractions are 
+In Chapter 2 we learned that every computer processor has an \gls{instruction set}.  The instructions a processor can be perform are very simple; for instance an instruction called \begin{verbatim}ADDI\end{verbatim} might add a value from on processor register to the value in another processor \index{register}. Programming with such simple primitive operations would be incredibly time-consuming, so higher-level languages create \gls{abstraction}s  The most typical abstractions are 
 
 \begin{itemize}
+\item input
+\item expression evaluation
 \item branching
 \item looping
+\item output
 \end{itemize}
+
+To solve a problem, we find a sequence of these abstractions that provides us with an answer to a problem upon its completion.  We call this sequence an \gls{algorithm}.  We examine each of these in more detail in the following sections, and then see how we can use algorithms to solve problems.
+
+\section{Input}
+
+Students often think of input as a transaction that takes place between users and computers.  This is not normally the case.  While input may come from a human user it is more likely to come from another \gls{algorithm} or even another machine.  For instance, many languages allow us to divide our code into smaller parts that solve specific sub-problems.  We call these algorithm chunks \gls{function}s or \gls{method}s \footnote{While these two terms do differ semantically, they are used interchangeably so often that their meanings have become somewhat obscured.}.  Functions may need data input in order to perform their job.  We pass input to functions via \gls{parameters}.  The following is an algorithm written in Python 3 for computing the area of a circle.  You should note that the entire algorit solves a single problem - that of helping a user quickly determine the area of a circle.  It is divided into multiple functions, and the functions take input in multiple ways.  Consider:
+
+\begin{verbatim}
+def calc_area(radius):
+    return 3.14159 * radius * radius
+
+def main():
+    print("What is the radius of the circle? ")
+    radius = float(input())
+    area = str(calc_area(radius))
+    print("The area of that circle is " + area)
+
+if __name__ == 'main':
+    main()
+
+\end{verbatim} 
+
+This algorithm works as follows:
+
+\begin{itemize}
+\item The calc\_area(radius) function is defined.
+\item The main() function is defined.
+\item The main() function is called.
+\item The main() function calls the function input(), which allows the user to enter some input.
+\item The user's input is converted into a number (user input was a string) and is stored in a variable called radius.
+\item The calc\_area(radius) function is called.  The value stored in the radius variable is passed to it as an input parameter.
+\item The calc\_area(radius) function computes the result and sends it back.
+\item The main() function stores the returned value in the variable area after it has converted it back to a string.
+\item The main() function prints the value out.
+\end{itemize}
+
+
 
 \chapter{Communicating with Computers}
 
@@ -203,7 +245,7 @@ In Chapter 2 we learned that every computer processor has an \index{instruction 
 
 \epigraph{Without mathematics, there's nothing you can do. Everything around you is mathematics. Everything around you is numbers.}{Shakuntala Devi}
 
-Many new students don't realize that the number system most commonly used for counting (the decimal, or base-10 system) is not the only one.  In fact, in computing there are several systems that are used.  The \textbf{base} of a number system is the collection of symbols used in that number system.  In decimal, we use the digits 0-9, and combine them to create numbers like 2, 42, and 1701.  The following sections describe the more commonly used systems (in computing).
+Many new students don't realize that the number system most commonly used for counting (the \gls{decimal}, or \gls{base-10} system) is not the only one.  In fact, in computing there are several systems that are used.  The \textbf{base} of a number system is the collection of symbols used in that number system.  In decimal, we use the digits 0-9, and combine them to create numbers like 2, 42, and 1701.  The following sections describe the more commonly used systems (in computing).
 
 \section{Binary}
 
@@ -219,24 +261,17 @@ This number in base-10 is 9.  We convert from base-2 to base-10 by starting at t
 
 $ 2^{3} + 2^{0} = 8 + 1 = 9 $
 
-\newglossaryentry{decimal}
-{
-	name=decimal,
-	description={The method of representing numbers using a base of 10.  For the majority of the world this is the usual counting system.}
-}
+\part{Framing the Building}
 
-\newglossaryentry{hexadecimal}
-{
-	name=hexadecimal (or hex),
-	description={A method of representing numbers using a base of 16 instead of a base of 10.  Uses digits 0-9 and letters A-F (lower or uppercase).  Often prepended with "0x" to remove any confusion.  For instance, 0x0A (which represents the decimal number '10')}
-}
+\part{Language Overviews}
 
-\newglossaryentry{octal}
-{
-	name=octal,
-	description={A base-8 number system.  Makes use of the digits 0-7.  Sometimes written with a lowercase "o" prepended to avoid confusion with decimal, i.e. o42 (which equals 34 in base-10)}
-}
+\chapter{C - The Lingua Franca}
 
+\chapter{C++}
+
+\chapter{Python}
+
+\chapter{JavaScript}
 %-----
 % END MATTER
 %-----
@@ -435,7 +470,7 @@ In a file, each of these entries could be represented by a single byte.  Viewed 
 \cleardoublepage
 \phantomsection
 \setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Glossary}} % Add an Index heading to the table of contents
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Glossary}} % Add an Index heading to the table of contents
 
 %\glsaddall
 \printglossaries
@@ -447,8 +482,8 @@ In a file, each of these entries could be represented by a single byte.  Viewed 
 \cleardoublepage % Make sure the index starts on an odd (right side) page
 \phantomsection
 \setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}} % Add an Index heading to the table of contents
-\printindex % Output the index
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}} % Add an Index heading to the table of content,%\printindex % Output the index
+\printindex
 
 %----------------------------------------------------------------------------------------
 
